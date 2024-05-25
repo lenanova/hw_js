@@ -1,3 +1,5 @@
+'use strict';
+
 // ax**2 + bx + c = 0
 
 // Equation #1: x**2 - 6x + 9 = 0

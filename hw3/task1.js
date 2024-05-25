@@ -1,3 +1,5 @@
+'use strict';
+
 // 1-3
 let item_1 = 5;
 console.log(item_1);
