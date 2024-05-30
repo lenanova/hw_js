@@ -4,7 +4,6 @@ const maximumAge = 60;
 let ageValue = prompt('How old are you? Enter a number.')
 
 // string input containing only numbers is accepted. Ex: "88" - accept, "88 years" or "" - throw an error.
-// Actually, for prompt we probably only need a check for an empty input?
 if (isNaN(ageValue) || !(ageValue)) {
     alert('Not a numberrrrrr!')
 } else {
