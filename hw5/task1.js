@@ -1,17 +1,21 @@
+'use strict';
+
 // 0..10
 
-let i = 0;
+let i = 10;
 
-while (i <=10) {
+while (i >+ 0) {
     console.log(i);
-    i++;
+    i--;
 }
 
 // :)
 const emoji = ':)';
+let row = emoji;
 
 for (i = 1; i < 6; i++) {
-    console.log(emoji.repeat(i));
+    console.log(row);
+    row += emoji;
 }
 
 // :) while
