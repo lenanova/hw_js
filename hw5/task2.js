@@ -38,3 +38,28 @@ if (bytes < divider) {
         console.log(`The number is too large! I'm running out of memory!`)
     }
 }
+
+// triangle
+
+let height = 5;
+
+for (let i = 0; i <= height; i++) {
+    let star = '*'.repeat(2 * i  + 1);
+    let space = ' '.repeat(height - i);
+    
+    console.log(space + star);
+}
+
+// diamond
+
+let halfHeight = 5;
+for (let i = 0; i <= halfHeight; i++) {
+    let space = ' '.repeat(halfHeight - i);
+    let star = '*'.repeat(2 * i  + 1);
+    console.log(space + star);
+}
+for (let i = halfHeight-1; i >= 0; i--) {
+    let space = ' '.repeat(halfHeight - i);
+    let star = '*'.repeat(2 * i  + 1);
+    console.log(space + star);
+}
