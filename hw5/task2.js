@@ -64,16 +64,35 @@ for (let i = halfHeight-1; i >= 0; i--) {
     console.log(space + star);
 }
 
-// 1...100/15
+// 1...100/15/5/3
 
 for (let i = 1; i <=100; i++) {
-    if (i % 15 === 0) {
-        console.log(`${i} is divisible by 3 and 5`);
+    /* хотела тут красиво написать 
+    if (!(i % 15))
+    но так нечитабельно */
+    if  (i % 15 === 0) {
+        console.log(`Number ${i} is divisible by 3 and 5`);
     } else if (i % 3 === 0) {
-        console.log(`${i} is divisible by 3`);
+        console.log(`Number ${i} is divisible by 3`);
     } else if (i % 5 === 0) {
-        console.log(`${i} is divisible by 5`);
+        console.log(`Number ${i} is divisible by 5`);
     } else {
         console.log(i);
     }
 }
+
+// camelCase
+
+let str = `Let's learn arrays`;
+if (str.includes('\'')) {
+    str = str.replaceAll('\'', '');
+}
+
+const strToArrayLowerCase = str.toLowerCase().split(' ');
+
+for (let i = 1; i < strToArrayLowerCase.length; i++) {
+    strToArrayLowerCase[i] = strToArrayLowerCase[i][0].toUpperCase() + strToArrayLowerCase[i].slice(1);
+}
+
+const strCamelCased = strToArrayLowerCase.join('');
+console.log(strCamelCased);
