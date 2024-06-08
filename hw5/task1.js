@@ -4,7 +4,7 @@
 
 let i = 10;
 
-while (i >+ 0) {
+while (i >= 0) {
     console.log(i);
     i--;
 }
@@ -13,7 +13,7 @@ while (i >+ 0) {
 const emoji = ':)';
 let row = emoji;
 
-for (i = 1; i < 6; i++) {
+for (let i = 1; i < 6; i++) {
     console.log(row);
     row += emoji;
 }
