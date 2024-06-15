@@ -47,7 +47,7 @@ console.log(comparePizzas(['Hawaii', 'Pepperoni']));
 function findWord (sentence) {
   const sentenceToArray = sentence.split(' ');
   let maxWordLength = 0;
-  let resultArray = [];
+  const resultArray = [];
 
 
   sentenceToArray.forEach(element => {
@@ -68,9 +68,35 @@ console.log(findWord('The quick brown fox jumps over the lazy dog'));
 console.log(findWord('JavaScrpt is a curse and a blessing'));
 
 /*
-3. Напишите функцию, которая принимает на вход массив чисел, убирает из него дубликаты и возвращает массив с только уникальными значениями.
+3. Напишите функцию, которая принимает на вход массив чисел, 
+убирает из него дубликаты и возвращает массив с только уникальными значениями.
 */
+
+function returnUniqueNumbers(arrayOfNumbers) {
+  const uniqueNumbers = [];
+  arrayOfNumbers.forEach(num => {
+    if (!uniqueNumbers.includes(num)) {
+      uniqueNumbers.push(num);
+    }
+  })
+  return uniqueNumbers;
+}
+
+console.log(returnUniqueNumbers([1, 2, 15, 47, 15, 2, 36]))
 
 /*
 4. Написать функцию, которая принимает на вход слово и проверяет, является ли это слово палиндромом
 */
+
+function verifyPalindrome(word) {
+  const wordToLowerCase = word.toLowerCase();
+  const reversedWord = wordToLowerCase.split('').reverse().join('');
+  if (reversedWord === wordToLowerCase) {
+    console.log(`${word} is a palindrome!`)
+  } else {
+    console.log(`${word} is not a palindrome. Try a different word!`)
+  }
+}
+
+verifyPalindrome('Kayak');
+verifyPalindrome('Kayaking');
