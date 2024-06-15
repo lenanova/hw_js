@@ -91,12 +91,8 @@ console.log(returnUniqueNumbers([1, 2, 15, 47, 15, 2, 36]))
 function verifyPalindrome(word) {
   const wordToLowerCase = word.toLowerCase();
   const reversedWord = wordToLowerCase.split('').reverse().join('');
-  if (reversedWord === wordToLowerCase) {
-    console.log(`${word} is a palindrome!`)
-  } else {
-    console.log(`${word} is not a palindrome. Try a different word!`)
-  }
+  return (reversedWord === wordToLowerCase)
 }
 
-verifyPalindrome('Kayak');
-verifyPalindrome('Kayaking');
+console.log(verifyPalindrome('Kayak'));
+console.log(verifyPalindrome('Kayaking'));

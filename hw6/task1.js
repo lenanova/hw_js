@@ -17,9 +17,7 @@ function getEmployeeInfo(employeeName) {
     if (!(employeeNames.includes(employeeName))) {
         return null;
     } else {
-        const result = [];
-        result.push(employeeNames[employeeIndex], employeeSalaries[employeeIndex]);
-        return result;
+        return [employeeNames[employeeIndex], employeeSalaries[employeeIndex]];
     }
 }
 
