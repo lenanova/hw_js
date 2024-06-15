@@ -39,10 +39,38 @@ console.log(comparePizzas(['Hawaii', 'Pepperoni']));
 
 
 /*  
-2. Написать функцию, которая принимает предложение (слова разделенные только пробелами) в качестве параметра и выводит в консоль слово с наибольшим количеством букв. 
-  Если таких слов несколько - выводит их все.
+2. Написать функцию, которая принимает предложение (слова разделенные только пробелами) 
+в качестве параметра и выводит в консоль слово с наибольшим количеством букв. 
+Если таких слов несколько - выводит их все.
+*/
 
+function findWord (sentence) {
+  const sentenceToArray = sentence.split(' ');
+  let maxWordLength = 0;
+  let resultArray = [];
+
+
+  sentenceToArray.forEach(element => {
+    if (element.length > maxWordLength) {
+      maxWordLength = element.length;
+    }
+  })
+
+  sentenceToArray.forEach(longWord => {
+    if (longWord.length === maxWordLength) {
+      resultArray.push(longWord);
+      }
+  })
+  return resultArray;
+}
+
+console.log(findWord('The quick brown fox jumps over the lazy dog'));
+console.log(findWord('JavaScrpt is a curse and a blessing'));
+
+/*
 3. Напишите функцию, которая принимает на вход массив чисел, убирает из него дубликаты и возвращает массив с только уникальными значениями.
+*/
 
+/*
 4. Написать функцию, которая принимает на вход слово и проверяет, является ли это слово палиндромом
 */
