@@ -97,7 +97,7 @@ function printCompanyInfo(arr){
 }
 
 printCompanyInfo(enterprises);
-console.log('=======')
+console.log('===2===')
 
 /*
 2. Написать функцию, которая будет принимать 1 аргумент (id отдела или название отдела 
@@ -127,7 +127,7 @@ function getCompanyByNameOrId(nameOrId){
 }
 
 console.log(getEnterpriseName(7));
-console.log('=======')
+console.log('===3===')
 /*
 3. Написать функцию, которая будет добавлять предприятие. В качестве аргумента принимает название предприятия
 
@@ -144,8 +144,8 @@ function addEnterprise(name) {
     enterprises.push(newEnterprise)
 }
 
-function getNewId(id) {
-    id = 0;
+function getNewId() {
+    let id = 0;
     enterprises.forEach((company) => {
         if (company.id > id) id = company.id;
         company.departments.forEach((dept) => {
@@ -157,7 +157,7 @@ function getNewId(id) {
 
 addEnterprise('Рога и Копыта - 4');
 console.log(enterprises);
-console.log('=======')
+console.log('===4===')
 /*
 4. Написать функцию, которая будет добавлять отдел в предприятие. 
 В качестве аргумента принимает id предприятия, в которое будет добавлен отдел и название отдела.
@@ -189,7 +189,7 @@ function getCompanyById(companyId) {
 
 addDepartment(9, 'QA');
 console.log(enterprises[2]);
-console.log('=======')
+console.log('===5===')
 /*
 5. Написать функцию для редактирования названия предприятия. Принимает в качестве аргумента id предприятия и новое имя предприятия.
 Пример:
@@ -206,7 +206,7 @@ function editEnterprise(companyId, newName) {
 editEnterprise(1, 'Новое название предприятия 1');
 console.log(enterprises[0]);
 
-console.log('=======')
+console.log('===6===')
 
 /*
 6. Написать функцию для редактирования названия отдела. Принимает в качестве аргумента id отдела и новое имя отдела.
@@ -235,7 +235,7 @@ function getDepartmentById(deptId) {
 editDepartment(6, "Новое название отдела");
 console.log(enterprises[1]);
 
-console.log('=======')
+console.log('===7===')
 /*
 7. Написать функцию для удаления предприятия. В качестве аргумента принимает id предприятия.
 
@@ -244,13 +244,16 @@ deleteEnterprise(1)
 */
 
 function deleteEnterprise(companyId) {
-    const companyToDelete = getCompanyById(companyId);
+    const companyToDelete = enterprises.findIndex((company) => company.id === companyId);
+    if (companyToDelete === -1) {
+        throw new Error("No such enterprise");
+    }
     enterprises.splice(companyToDelete, 1);
 }
 
 deleteEnterprise(1);
 console.log(enterprises);
-console.log('=======')
+console.log('===8===')
 /*
 8. Написать функцию для удаления отдела. В качестве аргумента принимает id отдела. Удалить отдел можно только, если в нем нет сотрудников.
 
@@ -281,7 +284,7 @@ function getCompanyByDept(dept) {
 
 deleteDepartment(10);
 console.log(enterprises);
-console.log('=======')
+console.log('===9===')
 
 /*
 9. Написать функцию для переноса сотрудников между отделами одного предприятия. В качестве аргумента принимает два значения: id отдела, из которого будут переноситься сотрудники и id отдела, в который будут переноситься сотрудники).
@@ -298,6 +301,12 @@ function moveEmployees(iDdept1, iDdept2) {
     
     if (!dept1 || !dept2) {
         throw new Error("Один из отделов не существует!");
+    }
+
+    const fromCompany = getCompanyByDept(iDdept1);
+    const toCompany = getCompanyByDept(iDdept2);
+    if (fromCompany !== toCompany) {
+        throw new Error("Отделы принадлежат разным предприятиям");
     }
     
     if (dept1.id === dept2.id) {
