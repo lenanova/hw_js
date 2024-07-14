@@ -16,26 +16,26 @@ DEVELOPER = "Developer" и так далее
 12. Создайте объект с типом ItEmployee
 */
 
-interface ItEmployee {
-  name: string;
-  surname: string;
-  readonly salary: number;
-  grade: Grade;
-  occupation: OCCUPATION;
-  address?: IAddress;
-  projectNames: string[];
-}
+export interface ItEmployee {
+    name: string;
+    surname: string;
+    readonly salary: number;
+    grade: Grade;
+    occupation: OCCUPATION;
+    address?: IAddress;
+    projectNames: string[];
+    }
 
-type Grade = "junior" | "middle" | "senior" | "lead";
+export type Grade = "junior" | "middle" | "senior" | "lead";
 
-enum OCCUPATION {
+export enum OCCUPATION {
     DEVELOPER = "Developer",
     QA = "QA Engineer",
     DEVOPS = "Devopsina",
     DATA = "Data Engineer",
 }
 
-interface IAddress {
+export interface IAddress {
     country: string;
     city: string;
     street: string;
@@ -43,7 +43,7 @@ interface IAddress {
     flat: number;
 }
 
-const employee_1: ItEmployee = {
+export const employee_1: ItEmployee = {
     name: "Katy",
     surname: "Brown",
     salary: 100000,
@@ -58,5 +58,3 @@ const employee_1: ItEmployee = {
     },
     projectNames: ["Project Alfa", "Project Beta", "Project Gamma"],
 }
-
-console.log(employee_1);
