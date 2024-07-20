@@ -96,6 +96,7 @@ function countValueTypes(obj: TObject | TObject[]): TCount {
     const result: TCount = { string: 0, number: 0, boolean: 0 };
 
     const countValues = (obj: TObject) => {
+        const result: TCount = { string: 0, number: 0, boolean: 0 }
         for (const key in obj) {
             const value = obj[key];
             if (typeof value === "string") {
@@ -106,6 +107,7 @@ function countValueTypes(obj: TObject | TObject[]): TCount {
                 result.boolean += 1;
             }
         }
+        return result;
     }
 
     if (Array.isArray(obj)) {
